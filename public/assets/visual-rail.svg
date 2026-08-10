@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" fill="#f5f0e6"/>
+  <rect y="0" width="1200" height="360" fill="#13232b"/>
+  <g transform="translate(110 260)">
+    <rect x="0" y="0" width="270" height="150" rx="10" fill="#a6bd42"/>
+    <rect x="295" y="0" width="270" height="150" rx="10" fill="#d7ff00"/>
+    <rect x="590" y="0" width="270" height="150" rx="10" fill="#7e4f2a"/>
+    <rect x="40" y="40" width="62" height="50" fill="#041118" opacity=".18"/>
+    <rect x="335" y="40" width="62" height="50" fill="#041118" opacity=".18"/>
+    <rect x="630" y="40" width="62" height="50" fill="#041118" opacity=".18"/>
+    <circle cx="75" cy="172" r="28" fill="#041118"/>
+    <circle cx="500" cy="172" r="28" fill="#041118"/>
+    <circle cx="800" cy="172" r="28" fill="#041118"/>
+  </g>
+  <path d="M70 520 H1130" stroke="#041118" stroke-width="18" stroke-linecap="round"/>
+  <path d="M140 610 H1060" stroke="#041118" stroke-width="14" stroke-linecap="round" opacity=".45"/>
+  <path d="M180 510 L90 680 M350 510 L260 680 M520 510 L430 680 M690 510 L600 680 M860 510 L770 680 M1030 510 L940 680" stroke="#041118" stroke-width="10" opacity=".32"/>
+</svg>
