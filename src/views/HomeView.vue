@@ -16,7 +16,7 @@ import { photos } from '../data/images'
         <h1>Smooth Flow Logistics</h1>
         <p>{{ site.brand }} coordinates ocean, air, rail, road and multimodal freight with clear milestones, document discipline and responsive handoff support.</p>
         <div class="hero-actions">
-          <RouterLink class="button button-primary" to="/quote">Get A Quote</RouterLink>
+          <RouterLink class="button button-primary whitespace-nowrap" to="/quote">Get A Quote</RouterLink>
           <a class="button button-ghost" href="#services">View Services</a>
         </div>
       </div>
@@ -54,11 +54,29 @@ import { photos } from '../data/images'
       <img class="w-full h-auto object-cover" :src="photos.portCranes" alt="Container cranes working at a port terminal" loading="lazy">
     </section>
 
-    <section class="trust-band">
-      <p>Trust / Compliance</p>
-      <div><span>Document discipline</span><strong>Consistent shipment records, document notes and handoff details.</strong></div>
-      <div><span>Milestone visibility</span><strong>Status communication focused on route events, next actions and exceptions.</strong></div>
-      <div><span>Operating clarity</span><strong>Practical coordination language for commercial cargo teams.</strong></div>
+    <section class="key-figures-section">
+      <div class="section-heading centered-heading">
+        <p class="eyebrow">Key figures</p>
+        <h2>Freight support built for B2B cargo teams.</h2>
+      </div>
+      <div class="key-figures" aria-label="Key figures">
+        <div>
+          <span>5</span>
+          <strong>Freight Modes</strong>
+        </div>
+        <div>
+          <span>3</span>
+          <strong>Logistics Solutions</strong>
+        </div>
+        <div>
+          <span>1</span>
+          <strong>Point of Contact</strong>
+        </div>
+        <div class="text-figure">
+          <span>End-to-End</span>
+          <strong>Milestones</strong>
+        </div>
+      </div>
     </section>
 
     <section class="section-block advantages-section">
@@ -70,19 +88,9 @@ import { photos } from '../data/images'
         <p>Our operating style is simple: confirm the cargo, align the route, keep the documents clean and make each milestone visible.</p>
       </div>
       <div class="advantage-grid">
-        <article><span>01</span><h3>Route clarity</h3><p>Mode, timing and handoff instructions are reviewed before booking.</p></article>
-        <article><span>02</span><h3>Document rhythm</h3><p>Shipment details and document notes stay connected to the freight plan.</p></article>
-        <article><span>03</span><h3>Milestone updates</h3><p>Teams receive practical updates focused on status, next action and exceptions.</p></article>
-      </div>
-      <div class="key-figures" aria-label="Key figures">
-        <div>
-          <span>5</span>
-          <strong>freight modes</strong>
-        </div>
-        <div>
-          <span>3</span>
-          <strong>logistics solutions</strong>
-        </div>
+        <article><span>Route</span><h3>Route clarity</h3><p>Mode, timing and handoff instructions are reviewed before booking.</p></article>
+        <article><span>Docs</span><h3>Document rhythm</h3><p>Shipment details and document notes stay connected to the freight plan.</p></article>
+        <article><span>Status</span><h3>Milestone updates</h3><p>Teams receive practical updates focused on status, next action and exceptions.</p></article>
       </div>
     </section>
 
@@ -128,10 +136,5 @@ import { photos } from '../data/images'
     </section>
 
     <QuoteCtaBand />
-    <section class="contact-teaser">
-      <p class="eyebrow">Contact</p>
-      <h2>Prefer email first?</h2>
-      <a :href="`mailto:${site.email}`">{{ site.email }}</a>
-    </section>
   </main>
 </template>

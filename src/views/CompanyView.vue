@@ -1,18 +1,17 @@
 <script setup lang="ts">
+import InnerHero from '../components/InnerHero.vue'
 import QuoteCtaBand from '../components/QuoteCtaBand.vue'
 import { site } from '../data/site'
 </script>
 
 <template>
   <main>
-    <section class="inner-hero company-hero">
-      <div>
-        <p class="eyebrow">Company</p>
-        <h1>{{ site.brand }}</h1>
-        <p>Freight coordination for B2B cargo teams that need route clarity, document discipline and practical shipment communication.</p>
-      </div>
-      <img class="w-full h-auto object-cover" src="/assets/visual-warehouse.svg" alt="Warehouse logistics visual">
-    </section>
+    <InnerHero
+      eyebrow="Company"
+      :title="site.brand"
+      description="Freight coordination for B2B cargo teams that need route clarity, document discipline and practical shipment communication."
+      image="/assets/visual-warehouse.svg"
+    />
     <section class="company-profile">
       <p class="eyebrow">Profile</p>
       <h2>{{ site.legalName }} supports international freight forwarding and logistics coordination from China.</h2>
