@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -28,11 +29,17 @@ body {
   background: var(--white);
   font-family: "Source Sans 3", Lato, "Segoe UI", sans-serif;
   letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 button,
@@ -44,7 +51,10 @@ textarea {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
   max-width: 100%;
+  object-fit: cover;
 }
 
 .site-header {
@@ -78,6 +88,7 @@ img {
 
 .brand {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   gap: 10px;
   font-family: Manrope, Montserrat, "Segoe UI", sans-serif;
@@ -105,6 +116,12 @@ img {
   font-weight: 800;
 }
 
+.mobile-home-link,
+.mobile-label,
+.nav-chevron {
+  display: none;
+}
+
 .nav-group {
   position: relative;
   display: flex;
@@ -118,6 +135,7 @@ img {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  gap: 8px;
   border: 0;
   color: inherit;
   background: transparent;
@@ -180,7 +198,8 @@ img {
   top: calc(100% - 2px);
   left: -16px;
   display: grid;
-  min-width: 260px;
+  width: max-content;
+  max-width: calc(100vw - 40px);
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -342,41 +361,19 @@ img {
   font-size: 14px;
 }
 
-.network-strip {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 12px;
-  padding: 28px clamp(20px, 6vw, 86px);
-  border-bottom: 1px solid var(--border);
-  color: color-mix(in srgb, var(--ink), white 28%);
-  background: white;
-  font-family: Manrope, Montserrat, "Segoe UI", sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.network-strip span {
-  min-width: 0;
-  padding: 12px 8px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--soft);
-}
-
 .section-block,
 .company-overview,
 .home-company,
 .trust-band,
 .solution-band,
-.service-consulting,
 .quote-cta-band,
 .detail-layout,
 .why-band,
 .company-profile,
 .mission-section,
 .policy-page,
-.not-found {
+.not-found,
+.contact-teaser {
   padding: clamp(58px, 8vw, 110px) clamp(20px, 6vw, 86px);
 }
 
@@ -450,9 +447,8 @@ p {
 
 .service-mosaic {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  max-width: 1060px;
 }
 
 .service-card {
@@ -471,15 +467,6 @@ p {
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 28px 70px rgba(31, 42, 68, 0.16);
-}
-
-.service-card:first-child,
-.service-card:last-child {
-  grid-column: auto;
-}
-
-.service-card:last-child {
-  grid-column: 1 / -1;
 }
 
 .service-card img {
@@ -579,8 +566,42 @@ p {
 .trust-band strong {
   display: block;
   margin-top: 10px;
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.28;
+}
+
+.key-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.key-figures div {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+}
+
+.key-figures span,
+.key-figures strong {
+  display: block;
+  font-family: Manrope, Montserrat, "Segoe UI", sans-serif;
+}
+
+.key-figures span {
+  color: var(--orange);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 950;
   line-height: 1;
+}
+
+.key-figures strong {
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 16px;
+  text-transform: lowercase;
 }
 
 .advantage-grid,
@@ -622,79 +643,6 @@ p {
 .solution-band,
 .soft-section {
   background: var(--soft);
-}
-
-.service-consulting {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 24px;
-  align-items: end;
-  overflow: hidden;
-  color: white;
-  background: var(--navy);
-}
-
-.service-consulting > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.78;
-}
-
-.service-consulting::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(23, 39, 88, 0.9), rgba(23, 39, 88, 0.34));
-}
-
-.consulting-copy,
-.service-consulting aside {
-  position: relative;
-  z-index: 1;
-}
-
-.consulting-copy {
-  max-width: 620px;
-}
-
-.play-button {
-  display: grid;
-  width: 68px;
-  height: 68px;
-  margin-top: 24px;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--orange);
-  background: white;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
-}
-
-.play-button::before {
-  content: "";
-  width: 0;
-  height: 0;
-  margin-left: 4px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid var(--orange);
-}
-
-.service-consulting aside {
-  display: grid;
-  gap: 8px;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: var(--radius);
-  background: rgba(7, 18, 46, 0.42);
-  backdrop-filter: blur(10px);
-}
-
-.service-consulting aside span {
-  color: rgba(255, 255, 255, 0.76);
 }
 
 .solution-list {
@@ -803,6 +751,23 @@ p {
   justify-content: space-between;
   gap: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-teaser {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  background: var(--soft);
+}
+
+.contact-teaser h2 {
+  font-size: clamp(30px, 4vw, 48px);
+}
+
+.contact-teaser a {
+  min-height: 44px;
+  color: var(--orange);
+  font-weight: 900;
 }
 
 .inner-hero,
@@ -920,6 +885,13 @@ p {
 .footer-grid span {
   display: block;
   margin-top: 12px;
+}
+
+.footer-grid a,
+.footer-bottom a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }
 
 .footer-brand p {
@@ -1111,7 +1083,30 @@ p {
   gap: 16px;
 }
 
-@media (max-width: 980px) {
+@media (min-width: 1280px) {
+  .service-mosaic {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .service-mosaic,
+  .advantage-grid,
+  .process-grid,
+  .key-figures,
+  .card-grid,
+  .trust-band,
+  .footer-grid,
+  .mission-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
   .site-header,
   .site-header.is-floating {
     top: 0;
@@ -1119,42 +1114,108 @@ p {
     width: 100%;
     min-height: 70px;
     transform: none;
+    color: var(--ink);
+    border: 0;
+    border-bottom: 1px solid var(--border);
     border-radius: 0;
+    background: rgba(251, 252, 255, 0.98);
   }
 
   .menu-toggle {
     display: block;
+    border-radius: 0;
+    color: var(--navy);
+    border-color: var(--border);
+    background: transparent;
   }
 
   .site-nav {
     position: fixed;
     top: 70px;
-    right: 0;
-    left: 0;
+    right: clamp(18px, 4vw, 40px);
+    left: clamp(18px, 4vw, 40px);
     display: none;
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     align-items: stretch;
-    padding: 16px 20px 24px;
+    gap: 0;
+    padding: 16px 22px 14px;
     color: var(--ink);
-    border-bottom: 1px solid var(--border);
+    border: 1px solid var(--border);
+    border-top: 0;
     background: white;
-    box-shadow: 0 24px 50px rgba(31, 42, 68, 0.16);
+    box-shadow: 0 24px 50px rgba(31, 42, 68, 0.12);
   }
 
   .site-nav.is-open {
     display: grid;
   }
 
+  .mobile-home-link,
+  .mobile-label,
+  .nav-chevron {
+    display: inline-flex;
+  }
+
+  .desktop-label {
+    display: none;
+  }
+
+  .nav-group {
+    display: grid;
+    min-height: 0;
+  }
+
   .nav-link,
   .nav-button {
     width: 100%;
+    min-height: 65px;
     justify-content: space-between;
+    padding: 0 8px;
+    border-radius: 4px;
+    color: #18314d;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .nav-link::after,
+  .nav-button::after {
+    content: none;
+  }
+
+  .nav-link.router-link-active {
+    color: #18314d;
+  }
+
+  .nav-button:hover,
+  .nav-link:hover {
+    color: var(--orange);
+    background: var(--soft);
+  }
+
+  .nav-chevron {
+    width: 11px;
+    height: 11px;
+    margin-right: 12px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 180ms ease;
+  }
+
+  .nav-button[aria-expanded="true"] .nav-chevron {
+    transform: rotate(225deg) translateY(-2px);
   }
 
   .submenu {
     position: static;
     display: none;
     min-width: 0;
-    margin: 0 0 10px;
+    margin: -2px 8px 12px;
+    padding: 4px 0 8px;
+    border: 0;
+    border-radius: 0;
     box-shadow: none;
     opacity: 1;
     pointer-events: auto;
@@ -1163,6 +1224,29 @@ p {
 
   .submenu.is-visible {
     display: grid;
+  }
+
+  .submenu a {
+    min-height: 44px;
+    padding: 10px 18px;
+    border-left: 2px solid var(--border);
+    border-radius: 0;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .submenu a:hover {
+    color: var(--orange);
+    background: transparent;
+  }
+
+  .nav-cta {
+    width: 100%;
+    min-height: 60px;
+    margin-top: 12px;
+    border-radius: 4px;
+    font-size: 16px;
   }
 
   .hero-status {
@@ -1175,6 +1259,8 @@ p {
   .split-heading,
   .company-overview,
   .trust-band,
+  .home-company,
+  .solution-band,
   .inner-hero,
   .post-hero,
   .detail-layout,
@@ -1188,8 +1274,9 @@ p {
   .service-mosaic,
   .advantage-grid,
   .process-grid,
+  .key-figures,
   .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .quote-intro {
@@ -1197,9 +1284,32 @@ p {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   .home-hero {
     min-height: 760px;
+  }
+
+  .hero-copy h1,
+  .inner-hero h1,
+  .post-hero h1,
+  .not-found h1,
+  .policy-page h1 {
+    font-size: clamp(36px, 11vw, 46px);
+  }
+
+  .hero-copy p {
+    font-size: 17px;
+  }
+
+  .hero-actions,
+  .quote-cta-band {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .button,
+  .quote-cta-band .button {
+    width: 100%;
   }
 
   .brand span:last-child {
@@ -1211,14 +1321,10 @@ p {
   .service-mosaic,
   .advantage-grid,
   .process-grid,
+  .key-figures,
   .card-grid,
   .quote-form {
     grid-template-columns: 1fr;
-  }
-
-  .service-card:first-child,
-  .service-card:last-child {
-    grid-column: auto;
   }
 
   .solution-list a,
@@ -1232,7 +1338,6 @@ p {
     height: 180px;
   }
 
-  .quote-cta-band,
   .footer-bottom,
   .cookie-banner {
     align-items: flex-start;

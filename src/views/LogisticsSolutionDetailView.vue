@@ -38,7 +38,7 @@ const related = computed(() =>
       </div>
     </section>
     <section class="why-band">
-      <img :src="page.heroImage" :alt="`${page.name} benefits`">
+      <img class="w-full h-auto object-cover" :src="page.heroImage" :alt="`${page.name} benefits`">
       <div>
         <p class="eyebrow">Benefits</p>
         <h2>Support that reduces manual follow-up.</h2>

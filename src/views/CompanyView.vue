@@ -11,7 +11,7 @@ import { site } from '../data/site'
         <h1>{{ site.brand }}</h1>
         <p>Freight coordination for B2B cargo teams that need route clarity, document discipline and practical shipment communication.</p>
       </div>
-      <img src="/assets/visual-warehouse.svg" alt="Warehouse logistics visual">
+      <img class="w-full h-auto object-cover" src="/assets/visual-warehouse.svg" alt="Warehouse logistics visual">
     </section>
     <section class="company-profile">
       <p class="eyebrow">Profile</p>
@@ -23,7 +23,7 @@ import { site } from '../data/site'
       <article><span>02</span><h3>Support around movement</h3><p>Customs document coordination, warehousing handoffs and tracking notes.</p></article>
       <article><span>03</span><h3>Practical communication</h3><p>Updates focus on milestones, next action and exception handling.</p></article>
     </section>
-    <section class="image-break"><img src="/assets/visual-ocean.svg" alt="Cargo vessel logistics illustration"></section>
+    <section class="image-break"><img class="w-full h-auto object-cover" src="/assets/visual-ocean.svg" alt="Cargo vessel logistics illustration"></section>
     <section class="mission-section">
       <div><p class="eyebrow">Mission</p><h2>Make freight movement easier to plan, review and hand off.</h2></div>
       <div><p class="eyebrow">Culture</p><h2>Clear details, steady follow-up and responsible communication.</h2></div>

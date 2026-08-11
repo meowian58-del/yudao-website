@@ -14,6 +14,6 @@ defineProps<{
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
     </div>
-    <img :src="image" :alt="`${title} visual`">
+    <img class="w-full h-auto object-cover" :src="image" :alt="`${title} visual`">
   </section>
 </template>

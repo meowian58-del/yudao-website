@@ -41,7 +41,7 @@ async function submit(event: Event) {
         <input type="hidden" name="_subject" value="New Quote Request from YUDAO GLOBAL LOGISTICS Website">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <label class="honeypot">Website<input name="_honey" tabindex="-1" autocomplete="off"></label>
+        <label class="honeypot" aria-hidden="true">Website<input name="_honey" tabindex="-1" autocomplete="off"></label>
         <label>Full Name<input name="Full Name" autocomplete="name" required></label>
         <label>Company Name<input name="Company Name" autocomplete="organization" required></label>
         <label>Business Email<input name="Business Email" type="email" autocomplete="email" required></label>

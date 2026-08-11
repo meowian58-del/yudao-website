@@ -18,7 +18,7 @@ const related = computed(() =>
 <template>
   <main v-if="post">
     <section class="post-hero">
-      <img :src="post.coverImage" :alt="post.title">
+      <img class="w-full h-auto object-cover" :src="post.coverImage" :alt="post.title">
       <div>
         <p class="eyebrow">Freight notes</p>
         <h1>{{ post.title }}</h1>

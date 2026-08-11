@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { mainNav, serviceNav, solutionNav } from '../data/navigation'
 import { site } from '../data/site'
@@ -9,6 +9,32 @@ const isOpen = ref(false)
 const openDropdown = ref<string | null>(null)
 const closeTimer = ref<number | null>(null)
 const isHome = computed(() => route.path === '/')
+const isMobile = ref(false)
+let mediaQuery: MediaQueryList | null = null
+
+watch(
+  () => route.fullPath,
+  () => closeAll(),
+)
+
+watch(isOpen, (value) => {
+  document.body.classList.toggle('nav-open', value)
+})
+
+onMounted(() => {
+  mediaQuery = window.matchMedia('(max-width: 767px)')
+  updateViewportMode(mediaQuery)
+  mediaQuery.addEventListener('change', updateViewportMode)
+  document.addEventListener('keydown', handleKeydown)
+  document.addEventListener('click', handleOutsideClick)
+})
+
+onBeforeUnmount(() => {
+  mediaQuery?.removeEventListener('change', updateViewportMode)
+  document.removeEventListener('keydown', handleKeydown)
+  document.removeEventListener('click', handleOutsideClick)
+  document.body.classList.remove('nav-open')
+})
 
 function closeAll() {
   isOpen.value = false
@@ -20,6 +46,7 @@ function toggleDropdown(name: string) {
 }
 
 function openMenu(name: string) {
+  if (isMobile.value) return
   cancelClose()
   openDropdown.value = name
 }
@@ -37,6 +64,25 @@ function cancelClose() {
     closeTimer.value = null
   }
 }
+
+function updateViewportMode(event: MediaQueryList | MediaQueryListEvent) {
+  isMobile.value = event.matches
+  if (!event.matches) {
+    isOpen.value = false
+  }
+  openDropdown.value = null
+}
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape') closeAll()
+}
+
+function handleOutsideClick(event: MouseEvent) {
+  const target = event.target
+  if (!(target instanceof Node)) return
+  const header = document.querySelector('.site-header')
+  if (header && !header.contains(target)) closeAll()
+}
 </script>
 
 <template>
@@ -51,15 +97,24 @@ function cancelClose() {
     </button>
 
     <nav class="site-nav" :class="{ 'is-open': isOpen }" aria-label="Primary navigation">
+      <RouterLink class="nav-link mobile-home-link" to="/" @click="closeAll">Home</RouterLink>
+
       <div class="nav-group" @mouseenter="cancelClose" @mouseleave="scheduleClose">
-        <button class="nav-link nav-button" type="button" :aria-expanded="openDropdown === 'services'" @click="toggleDropdown('services')" @mouseenter="openMenu('services')">Services</button>
+        <button class="nav-link nav-button" type="button" :aria-expanded="openDropdown === 'services'" @click="toggleDropdown('services')" @mouseenter="openMenu('services')">
+          <span>Services</span>
+          <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
         <div class="submenu" :class="{ 'is-visible': openDropdown === 'services' }">
           <RouterLink v-for="item in serviceNav" :key="item.path" :to="item.path" @click="closeAll">{{ item.label }}</RouterLink>
         </div>
       </div>
 
       <div class="nav-group" @mouseenter="cancelClose" @mouseleave="scheduleClose">
-        <button class="nav-link nav-button" type="button" :aria-expanded="openDropdown === 'solutions'" @click="toggleDropdown('solutions')" @mouseenter="openMenu('solutions')">Logistics Solutions</button>
+        <button class="nav-link nav-button" type="button" :aria-expanded="openDropdown === 'solutions'" @click="toggleDropdown('solutions')" @mouseenter="openMenu('solutions')">
+          <span class="desktop-label">Logistics Solutions</span>
+          <span class="mobile-label">Solutions</span>
+          <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
         <div class="submenu" :class="{ 'is-visible': openDropdown === 'solutions' }">
           <RouterLink v-for="item in solutionNav" :key="item.path" :to="item.path" @click="closeAll">{{ item.label }}</RouterLink>
         </div>

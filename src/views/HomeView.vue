@@ -27,25 +27,6 @@ import { photos } from '../data/images'
       </div>
     </section>
 
-    <section class="network-strip" aria-label="Freight coordination network">
-      <span>Ocean Booking</span>
-      <span>Air Freight</span>
-      <span>Rail Handoff</span>
-      <span>Road Transport</span>
-      <span>Customs Docs</span>
-      <span>Warehouse Intake</span>
-    </section>
-
-    <section class="home-company">
-      <div class="home-company-copy">
-        <p class="eyebrow">About us</p>
-        <h2>Provide logistics support since 1996.</h2>
-        <p>{{ site.brand }} supports importers, exporters and platform sellers with freight coordination that keeps route planning, documents and milestone communication in one steady rhythm.</p>
-        <RouterLink class="text-link" to="/company">View Company</RouterLink>
-      </div>
-      <img :src="photos.portCranes" alt="Container cranes working at a port terminal" loading="lazy">
-    </section>
-
     <section id="services" class="section-block">
       <div class="section-heading split-heading">
         <div>
@@ -56,30 +37,31 @@ import { photos } from '../data/images'
       </div>
       <div class="service-mosaic">
         <RouterLink v-for="service in services" :key="service.slug" class="service-card" :to="`/${service.slug}`">
-          <img :src="service.heroImage" :alt="service.name" loading="lazy">
+          <img class="w-full h-auto object-cover" :src="service.heroImage" :alt="service.name" loading="lazy">
           <span>{{ service.name }}</span>
           <b>Open</b>
         </RouterLink>
       </div>
     </section>
 
-    <section class="trust-band">
-      <p>Built for commercial cargo teams that need practical coordination, clean handoff notes and reliable communication.</p>
-      <div>
-        <span>Freight modes</span>
-        <strong>5</strong>
+    <section class="home-company">
+      <div class="home-company-copy">
+        <p class="eyebrow">Company Overview</p>
+        <h2>Freight coordination for structured B2B cargo planning.</h2>
+        <p>{{ site.brand }} supports importers, exporters and platform sellers with freight coordination that keeps route planning, documents and milestone communication in one steady rhythm.</p>
+        <RouterLink class="text-link" to="/company">View Company</RouterLink>
       </div>
-      <div>
-        <span>Support modules</span>
-        <strong>8</strong>
-      </div>
-      <div>
-        <span>Legal entity</span>
-        <strong>Verified display</strong>
-      </div>
+      <img class="w-full h-auto object-cover" :src="photos.portCranes" alt="Container cranes working at a port terminal" loading="lazy">
     </section>
 
-    <section class="section-block">
+    <section class="trust-band">
+      <p>Trust / Compliance</p>
+      <div><span>Document discipline</span><strong>Consistent shipment records, document notes and handoff details.</strong></div>
+      <div><span>Milestone visibility</span><strong>Status communication focused on route events, next actions and exceptions.</strong></div>
+      <div><span>Operating clarity</span><strong>Practical coordination language for commercial cargo teams.</strong></div>
+    </section>
+
+    <section class="section-block advantages-section">
       <div class="section-heading split-heading">
         <div>
           <p class="eyebrow">Advantages</p>
@@ -92,26 +74,23 @@ import { photos } from '../data/images'
         <article><span>02</span><h3>Document rhythm</h3><p>Shipment details and document notes stay connected to the freight plan.</p></article>
         <article><span>03</span><h3>Milestone updates</h3><p>Teams receive practical updates focused on status, next action and exceptions.</p></article>
       </div>
-    </section>
-
-    <section class="service-consulting">
-      <img :src="photos.aerialShip" alt="Aerial view of a container ship at sea" loading="lazy">
-      <div class="consulting-copy">
-        <p class="eyebrow">Service Consulting</p>
-        <h2>Trustworthy and customized to your needs.</h2>
-        <RouterLink class="play-button" to="/quote" aria-label="Open quote request"></RouterLink>
+      <div class="key-figures" aria-label="Key figures">
+        <div>
+          <span>5</span>
+          <strong>freight modes</strong>
+        </div>
+        <div>
+          <span>3</span>
+          <strong>logistics solutions</strong>
+        </div>
       </div>
-      <aside>
-        <strong>One route plan</strong>
-        <span>Quote, booking, document notes and delivery milestones stay connected.</span>
-      </aside>
     </section>
 
     <section class="solution-band">
       <div class="solution-collage">
-        <img :src="photos.portCranes" alt="Port cranes and container stacks" loading="lazy">
-        <img :src="photos.truck" alt="Freight truck on a logistics route" loading="lazy">
-        <img :src="photos.warehouse" alt="Warehouse storage and cargo handling" loading="lazy">
+        <img class="w-full h-auto object-cover" :src="photos.portCranes" alt="Port cranes and container stacks" loading="lazy">
+        <img class="w-full h-auto object-cover" :src="photos.truck" alt="Freight truck on a logistics route" loading="lazy">
+        <img class="w-full h-auto object-cover" :src="photos.warehouse" alt="Warehouse storage and cargo handling" loading="lazy">
       </div>
       <div>
         <div class="section-heading">
@@ -140,7 +119,7 @@ import { photos } from '../data/images'
       </div>
       <div class="card-grid">
         <RouterLink v-for="post in blogPosts.slice(0, 3)" :key="post.slug" class="blog-card" :to="`/blog/${post.slug}`">
-          <img :src="post.coverImage" :alt="post.title" loading="lazy">
+          <img class="w-full h-auto object-cover" :src="post.coverImage" :alt="post.title" loading="lazy">
           <time>{{ post.publishedDate }}</time>
           <h3>{{ post.title }}</h3>
           <p>{{ post.excerpt }}</p>
@@ -149,5 +128,10 @@ import { photos } from '../data/images'
     </section>
 
     <QuoteCtaBand />
+    <section class="contact-teaser">
+      <p class="eyebrow">Contact</p>
+      <h2>Prefer email first?</h2>
+      <a :href="`mailto:${site.email}`">{{ site.email }}</a>
+    </section>
   </main>
 </template>

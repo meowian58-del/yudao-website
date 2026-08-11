@@ -28,7 +28,6 @@ import { site } from '../data/site'
         <h3>Company</h3>
         <RouterLink to="/company">Company</RouterLink>
         <RouterLink to="/blog">Blog</RouterLink>
-        <RouterLink to="/quote">Get A Quote</RouterLink>
       </div>
     </div>
     <div class="footer-bottom">
