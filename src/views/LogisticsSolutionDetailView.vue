@@ -25,7 +25,7 @@ const related = computed(() =>
         <article v-for="need in page.needs" :key="need"><span></span><p>{{ need }}</p></article>
       </div>
     </section>
-    <section class="section-block">
+    <section class="section-block included-services-section">
       <div class="section-heading"><p class="eyebrow">Included Services</p><h2>{{ page.overview }}</h2></div>
       <div class="advantage-grid">
         <article v-for="item in page.capabilities" :key="item"><span>+</span><h3>{{ item }}</h3></article>

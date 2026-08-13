@@ -5,4 +5,5 @@ export const photos = {
   warehouse: '/assets/photos/warehouse-logistics.jpg',
   truck: '/assets/photos/freight-truck.jpg',
   orangeContainers: '/assets/photos/container-yard.jpg',
+  yudaoTeam: '/assets/photos/yudao-team-brand-story.png',
 }
