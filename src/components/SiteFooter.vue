@@ -9,7 +9,7 @@ import { site } from '../data/site'
     <div class="footer-grid">
       <div class="footer-brand">
         <RouterLink class="brand" to="/">
-          <span class="brand-mark">Y</span>
+          <img class="brand-logo" src="/assets/brand/logo-yudao.png" alt="" aria-hidden="true">
           <span>{{ site.brand }}</span>
         </RouterLink>
         <p>{{ site.legalName }}</p>

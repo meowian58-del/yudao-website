@@ -97,6 +97,13 @@ img {
   white-space: nowrap;
 }
 
+.brand-logo {
+  width: auto;
+  height: 30px;
+  max-width: 116px;
+  object-fit: contain;
+}
+
 .brand-mark {
   display: grid;
   width: 28px;

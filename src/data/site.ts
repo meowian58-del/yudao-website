@@ -40,6 +40,26 @@ export const imageLedger = [
     usage: 'Rail and container yard service card',
   },
   {
+    file: '/assets/photos/about-team-cover.png',
+    source: 'User-provided team cover image',
+    usage: 'Company page hero',
+  },
+  {
+    file: '/assets/brand/logo-yudao.png',
+    source: 'User-provided brand logo',
+    usage: 'Site header and footer',
+  },
+  {
+    file: 'https://images.unsplash.com/photo-1774698078446-59299e016718',
+    source: 'Unsplash photo by Peaky_82',
+    usage: 'Air freight service card',
+  },
+  {
+    file: 'https://images.unsplash.com/photo-1778441531349-b0c874287ebc',
+    source: 'Unsplash photo by Louis Le Pessot',
+    usage: 'Multimodal transport service card',
+  },
+  {
     file: '/assets/visual-documents.svg',
     source: 'Local project-owned SVG illustration',
     usage: 'Documentation pages and fallback visual',

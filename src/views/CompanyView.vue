@@ -11,7 +11,7 @@ import { photos } from '../data/images'
       eyebrow="Company"
       :title="site.brand"
       description="Shenzhen Yudao Global Logistics Limited. Freight coordination with clear routes, disciplined documents and steady shipment communication."
-      :image="photos.yudaoTeam"
+      :image="photos.aboutTeamCover"
     />
     <section class="company-profile">
       <p class="eyebrow">Profile</p>
