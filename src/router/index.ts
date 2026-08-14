@@ -45,13 +45,16 @@ router.afterEach((to) => {
   document.title = entry.title
   setMeta('description', entry.description)
   setMeta('og:title', entry.title, 'property')
+  setMeta('og:type', 'website', 'property')
   setMeta('og:description', entry.description, 'property')
   setMeta('og:url', `${site.domain}${to.path}`)
   setMeta('twitter:card', 'summary_large_image')
   setCanonical(`${site.domain}${to.path}`)
 
   if (entry.image) {
-    setMeta('og:image', absoluteUrl(entry.image), 'property')
+    const imageUrl = absoluteUrl(entry.image)
+    setMeta('og:image', imageUrl, 'property')
+    setMeta('twitter:image', imageUrl)
   }
 
   const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]')

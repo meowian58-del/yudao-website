@@ -3,6 +3,7 @@ export interface BusinessPage {
   name: string
   shortDescription: string
   heroImage: string
+  featureImage?: string
   overview: string
   capabilities: string[]
   process: string[]

@@ -31,14 +31,7 @@ import { photos } from '../data/images'
       </div>
       <div class="brand-story-media">
         <img :src="photos.yudaoStaffs" alt="Yudao team walking together near the coast" loading="lazy" />
-        <img :src="photos.yudaoStaffWork" alt="Yudao operations team coordinating documents in the office" loading="lazy" />
       </div>
-    </section>
-    <section class="company-photo-grid" aria-label="Yudao team and office photos">
-      <img :src="photos.yudaoOffice" alt="Yudao office reception area" loading="lazy" />
-      <img :src="photos.yudaoStaffs" alt="Yudao team activity by the coast" loading="lazy" />
-      <img :src="photos.yudaoStaffWork" alt="Yudao team working on freight documents" loading="lazy" />
-      <img :src="photos.yudaoStaffBeach" alt="Yudao team group activity on the beach" loading="lazy" />
     </section>
     <section class="advantage-grid company-points">
       <article><span>2023</span><h3>Founded in Shenzhen</h3><p>Shenzhen Yudao Global Logistics Limited was founded in 2023 to support structured international freight coordination.</p></article>

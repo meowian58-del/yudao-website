@@ -32,7 +32,7 @@ const related = computed(() =>
       </div>
     </section>
     <section class="why-band">
-      <img class="w-full h-auto object-cover" :src="page.heroImage" :alt="`${page.name} planning`">
+      <img class="w-full h-auto object-cover" :src="page.featureImage ?? page.heroImage" :alt="`${page.name} planning`">
       <div>
         <p class="eyebrow">Why choose us</p>
         <h2>One accountable view for booking, documents and milestones.</h2>

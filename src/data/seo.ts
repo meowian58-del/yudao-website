@@ -8,12 +8,12 @@ export const seo: Record<string, SeoEntry> = {
   '/': {
     title: `${site.brand} | International Freight Forwarding`,
     description: 'Ocean, air, rail, road and multimodal freight coordination for B2B cargo.',
-    image: '/assets/visual-ocean.svg',
+    image: '/assets/photos/hero-cargo-ship.jpg',
   },
   '/company': {
     title: `Company | ${site.brand}`,
     description: 'Learn about YUDAO GLOBAL LOGISTICS and its freight coordination approach.',
-    image: '/assets/visual-warehouse.svg',
+    image: '/assets/photos/yudao-staffs.png',
   },
   '/blog': {
     title: `Blog | ${site.brand}`,
@@ -23,7 +23,7 @@ export const seo: Record<string, SeoEntry> = {
   '/quote': {
     title: `Get A Quote | ${site.brand}`,
     description: 'Request a freight quote for ocean, air, rail, road or multimodal transport.',
-    image: '/assets/visual-road.svg',
+    image: '/assets/photos/freight-truck.jpg',
   },
   '/privacy': {
     title: `Privacy Policy | ${site.brand}`,
