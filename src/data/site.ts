@@ -40,14 +40,39 @@ export const imageLedger = [
     usage: 'Rail and container yard service card',
   },
   {
-    file: '/assets/photos/about-team-cover.png',
-    source: 'User-provided team cover image',
-    usage: 'Company page hero',
+    file: '/assets/photos/yudao-office.png',
+    source: 'User-provided office photo',
+    usage: 'Company page hero and photo gallery',
   },
   {
     file: '/assets/brand/logo-yudao.png',
     source: 'User-provided brand logo',
-    usage: 'Site header and footer',
+    usage: 'Site header logo',
+  },
+  {
+    file: '/assets/brand/logo-yudao-white.png',
+    source: 'User-provided white brand logo',
+    usage: 'Site footer logo',
+  },
+  {
+    file: '/assets/brand/yudao-favicon.svg',
+    source: 'User-provided favicon',
+    usage: 'Browser favicon',
+  },
+  {
+    file: '/assets/photos/yudao-staffs.png',
+    source: 'User-provided team photo',
+    usage: 'Company page photo gallery',
+  },
+  {
+    file: '/assets/photos/yudao-staff-3.png',
+    source: 'User-provided office team photo',
+    usage: 'Company page photo gallery',
+  },
+  {
+    file: '/assets/photos/yudao-staff-4.png',
+    source: 'User-provided team activity photo',
+    usage: 'Company page photo gallery',
   },
   {
     file: 'https://images.unsplash.com/photo-1774698078446-59299e016718',

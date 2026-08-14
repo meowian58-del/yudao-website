@@ -8,7 +8,11 @@ export const photos = {
   railFreight: '/assets/photos/rail-freight.jpg',
   airFreight: 'https://images.unsplash.com/photo-1774698078446-59299e016718?auto=format&fit=crop&fm=jpg&q=78&w=1600',
   multimodal: 'https://images.unsplash.com/photo-1778441531349-b0c874287ebc?auto=format&fit=crop&fm=jpg&q=78&w=1600',
-  aboutTeamCover: '/assets/photos/about-team-cover.png',
   logo: '/assets/brand/logo-yudao.png',
-  yudaoTeam: '/assets/photos/yudao-team-brand-story.png',
+  logoWhite: '/assets/brand/logo-yudao-white.png',
+  favicon: '/assets/brand/yudao-favicon.png',
+  yudaoOffice: '/assets/photos/yudao-office.png',
+  yudaoStaffs: '/assets/photos/yudao-staffs.png',
+  yudaoStaffWork: '/assets/photos/yudao-staff-3.png',
+  yudaoStaffBeach: '/assets/photos/yudao-staff-4.png',
 }

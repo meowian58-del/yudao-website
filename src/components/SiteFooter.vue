@@ -9,8 +9,7 @@ import { site } from '../data/site'
     <div class="footer-grid">
       <div class="footer-brand">
         <RouterLink class="brand" to="/">
-          <img class="brand-logo" src="/assets/brand/logo-yudao.png" alt="" aria-hidden="true">
-          <span>{{ site.brand }}</span>
+          <img class="brand-logo" src="/assets/brand/logo-yudao-white.png" alt="" aria-hidden="true">
         </RouterLink>
         <p>{{ site.legalName }}</p>
         <a :href="`mailto:${site.email}`">{{ site.email }}</a>

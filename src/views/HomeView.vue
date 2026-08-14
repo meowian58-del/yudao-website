@@ -10,7 +10,7 @@ import { photos } from '../data/images'
 
 <template>
   <main>
-    <section class="home-hero" :style="{ backgroundImage: `linear-gradient(90deg, rgba(20, 36, 82, 0.86), rgba(20, 36, 82, 0.18)), url(${photos.heroShip})` }">
+    <section class="home-hero" :style="{ backgroundImage: `linear-gradient(90deg, rgba(19, 51, 101, 0.88), rgba(19, 51, 101, 0.18)), url(${photos.heroShip})` }">
       <div class="hero-copy">
         <p class="eyebrow">Global B2B freight coordination</p>
         <h1>Smooth Flow Logistics</h1>

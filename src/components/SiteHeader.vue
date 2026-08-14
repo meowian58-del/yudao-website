@@ -89,7 +89,6 @@ function handleOutsideClick(event: MouseEvent) {
   <header class="site-header" :class="{ 'is-floating': isHome, 'is-solid': !isHome }">
     <RouterLink class="brand" to="/" aria-label="YUDAO GLOBAL LOGISTICS home" @click="closeAll">
       <img class="brand-logo" src="/assets/brand/logo-yudao.png" alt="" aria-hidden="true">
-      <span>{{ site.brand }}</span>
     </RouterLink>
 
     <button class="menu-toggle" type="button" :aria-expanded="isOpen" aria-label="Toggle navigation" @click="isOpen = !isOpen">
