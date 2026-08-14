@@ -72,9 +72,9 @@ import { photos } from '../data/images'
           <span>1</span>
           <strong>Point of Contact</strong>
         </div>
-        <div class="text-figure">
-          <span>End-to-End</span>
-          <strong>Milestones</strong>
+        <div>
+          <span>2023</span>
+          <strong>Founded</strong>
         </div>
       </div>
     </section>

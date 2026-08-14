@@ -35,6 +35,7 @@ import { photos } from '../data/images'
       </figure>
     </section>
     <section class="advantage-grid company-points">
+      <article><span>2023</span><h3>Founded in Shenzhen</h3><p>Shenzhen Yudao Global Logistics Limited was founded in 2023 to support structured international freight coordination.</p></article>
       <article><span>01</span><h3>Freight mode coverage</h3><p>Ocean, air, rail, road and multimodal transport coordination.</p></article>
       <article><span>02</span><h3>Support around movement</h3><p>Customs document coordination, warehousing handoffs and tracking notes.</p></article>
       <article><span>03</span><h3>Practical communication</h3><p>Updates focus on milestones, next action and exception handling.</p></article>

@@ -1065,6 +1065,10 @@ p {
   padding-left: clamp(20px, 6vw, 86px);
 }
 
+.company-points {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .image-break {
   padding: 0 clamp(20px, 6vw, 86px);
 }
