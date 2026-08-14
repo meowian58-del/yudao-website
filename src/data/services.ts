@@ -26,7 +26,7 @@ export const services: BusinessPage[] = [
     slug: 'rail-freight',
     name: 'Rail Freight',
     shortDescription: 'Scheduled inland movement for structured cargo programs.',
-    heroImage: photos.orangeContainers,
+    heroImage: photos.railFreight,
     overview: 'Rail freight can support planned inland movement when the cargo profile, timing and receiving side work best with a scheduled linehaul plan.',
     capabilities: ['Rail routing review', 'Pickup and terminal handoff coordination', 'Document and cargo status follow-up', 'Delivery appointment support'],
     process: ['Confirm cargo profile and timing tolerance', 'Align terminal handoff and onward delivery plan', 'Monitor milestones and receiving instructions'],
