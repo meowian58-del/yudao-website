@@ -1,7 +1,7 @@
 export const site = {
   brand: 'YUDAO GLOBAL LOGISTICS',
   legalName: 'SHENZHEN YUDAO GLOBAL LOGISTICS LIMITED',
-  domain: 'https://yudaoglobal.com',
+  domain: 'https://bea530cc.yudao-website.pages.dev',
   email: 'official@yudaoglobal.com',
   address: 'China',
   year: 2026,
