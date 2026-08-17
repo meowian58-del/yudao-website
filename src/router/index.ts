@@ -54,6 +54,8 @@ router.afterEach((to) => {
   if (entry.image) {
     const imageUrl = absoluteUrl(entry.image)
     setMeta('og:image', imageUrl, 'property')
+    setMeta('og:image:width', '1200', 'property')
+    setMeta('og:image:height', '630', 'property')
     setMeta('twitter:image', imageUrl)
   }
 

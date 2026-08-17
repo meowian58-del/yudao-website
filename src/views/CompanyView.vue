@@ -14,9 +14,14 @@ import { photos } from '../data/images'
       :image="photos.yudaoOffice"
     />
     <section class="company-profile">
-      <p class="eyebrow">Profile</p>
-      <h2>{{ site.legalName }} supports international freight forwarding and logistics coordination from China.</h2>
-      <p>Shenzhen Yudao Global Logistics Limited helps customers align cargo details, transport modes, documents and handoff timing into a clear shipment plan. We serve B2B cargo teams that need practical cross-border logistics support from inquiry to delivery handoff.</p>
+      <div class="company-profile-media">
+        <img :src="photos.yudaoStaffWork" alt="Yudao logistics team coordinating shipment documents in the office" loading="lazy" />
+      </div>
+      <div class="company-profile-copy">
+        <p class="eyebrow">Profile</p>
+        <h2>{{ site.legalName }} supports international freight coordination from China.</h2>
+        <p>Shenzhen Yudao Global Logistics Limited helps customers align cargo details, transport modes, documents and handoff timing into a clear shipment plan. We serve B2B cargo teams that need practical cross-border logistics support from inquiry to delivery handoff.</p>
+      </div>
     </section>
     <section class="brand-story">
       <div class="brand-story-copy">

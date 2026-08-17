@@ -20,6 +20,11 @@ export const imageLedger = [
     usage: 'Company overview and port operation card',
   },
   {
+    file: '/assets/photos/og-ocean-freight.jpg',
+    source: 'Cropped Open Graph image from Unsplash Source photo-1649872136245-6070c1a71349',
+    usage: 'Ocean freight Open Graph and social preview image',
+  },
+  {
     file: '/assets/photos/aerial-container-ship.jpg',
     source: 'Unsplash Source photo-1649872136245-6070c1a71349',
     usage: 'Advantage media banner and ocean service card',

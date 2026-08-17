@@ -3,6 +3,7 @@ import { site } from './site'
 import { services } from './services'
 import { logisticsSolutions } from './logisticsSolutions'
 import { blogPosts } from './blog'
+import { photos } from './images'
 
 export const seo: Record<string, SeoEntry> = {
   '/': {
@@ -35,7 +36,7 @@ services.forEach((item) => {
   seo[`/${item.slug}`] = {
     title: `${item.name} | ${site.brand}`,
     description: item.shortDescription,
-    image: item.heroImage,
+    image: item.slug === 'ocean-freight' ? photos.oceanFreightOg : item.heroImage,
   }
 })
 
