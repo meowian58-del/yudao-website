@@ -34,20 +34,26 @@ import { photos } from '../data/images'
           From Shenzhen, we connect Chinese supply chains with global trade lanes. Our brand story begins with a simple promise: help every shipment find a steadier way forward, with documents, timing and handoffs treated as seriously as the cargo itself.
         </p>
       </div>
-      <div class="brand-story-media">
-        <img :src="photos.yudaoStaffs" alt="Yudao team walking together near the coast" loading="lazy" />
-      </div>
     </section>
     <section class="company-gallery" aria-label="Yudao team photo gallery">
       <div class="company-gallery-hero">
         <img :src="photos.aboutTeamCover" alt="Yudao team group photo outside the Shenzhen office" loading="lazy" />
       </div>
-      <div class="company-gallery-track" tabindex="0" aria-label="Scrollable Yudao team moments">
-        <img :src="photos.yudaoStaffs" alt="Yudao colleagues walking together near the coast" loading="lazy" />
-        <img :src="photos.yudaoStaffWork" alt="Yudao team members in the office" loading="lazy" />
-        <img :src="photos.yudaoStaffBeach" alt="Yudao team smiling together by the waterfront" loading="lazy" />
-        <img :src="photos.yudaoTeamBrandStory" alt="Yudao team brand story group moment" loading="lazy" />
-        <img :src="photos.yudaoOffice" alt="Yudao office meeting and operations workspace" loading="lazy" />
+      <div class="company-gallery-marquee" tabindex="0" aria-label="Yudao team moments">
+        <div class="company-gallery-track">
+          <div class="company-gallery-set">
+            <img :src="photos.yudaoStaffs" alt="Yudao colleagues walking together near the coast" loading="lazy" />
+            <img :src="photos.yudaoStaffWork" alt="Yudao team members in the office" loading="lazy" />
+            <img :src="photos.yudaoTeamBrandStory" alt="Yudao team brand story group moment" loading="lazy" />
+            <img :src="photos.yudaoOffice" alt="Yudao office meeting and operations workspace" loading="lazy" />
+          </div>
+          <div class="company-gallery-set" aria-hidden="true">
+            <img :src="photos.yudaoStaffs" alt="" loading="lazy" />
+            <img :src="photos.yudaoStaffWork" alt="" loading="lazy" />
+            <img :src="photos.yudaoTeamBrandStory" alt="" loading="lazy" />
+            <img :src="photos.yudaoOffice" alt="" loading="lazy" />
+          </div>
+        </div>
       </div>
     </section>
     <section class="advantage-grid company-points">

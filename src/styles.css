@@ -1025,15 +1025,15 @@ p {
 }
 
 .brand-story {
-  display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(280px, 0.72fr);
-  gap: clamp(30px, 5vw, 72px);
-  align-items: center;
+  display: flex;
+  justify-content: center;
   background: var(--soft);
+  text-align: center;
 }
 
 .brand-story-copy {
-  max-width: 720px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .brand-story-copy p:not(.eyebrow) {
@@ -1042,34 +1042,12 @@ p {
   line-height: 1.75;
 }
 
-.brand-story figure {
-  margin: 0;
-}
-
-.brand-story-media {
-  display: grid;
-  gap: 14px;
-  width: min(100%, 460px);
-  justify-self: end;
-}
-
-.brand-story-media img,
 .company-photo-grid img {
   aspect-ratio: 1.33;
   border-radius: var(--radius);
   object-fit: cover;
   object-position: center;
   box-shadow: 0 24px 70px rgba(19, 51, 101, 0.14);
-}
-
-.brand-story-media img:first-child {
-  aspect-ratio: 1.45;
-}
-
-.brand-story figcaption {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 14px;
 }
 
 .company-gallery {
@@ -1092,34 +1070,57 @@ p {
   box-shadow: 0 24px 70px rgba(19, 51, 101, 0.14);
 }
 
-.company-gallery-track {
-  display: grid;
-  grid-auto-columns: minmax(280px, 380px);
-  grid-auto-flow: column;
-  gap: 14px;
+.company-gallery-marquee {
   width: min(1180px, 100%);
   padding: 14px 0 6px;
   margin: 0 auto;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-padding-inline: 0;
-  scroll-snap-type: inline mandatory;
-  scrollbar-color: rgba(187, 128, 17, 0.7) rgba(19, 51, 101, 0.08);
+  overflow: hidden;
 }
 
-.company-gallery-track:focus-visible {
+.company-gallery-marquee:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 6px;
 }
 
+.company-gallery-track {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  animation: company-gallery-pan 26s linear infinite;
+  will-change: transform;
+}
+
+.company-gallery-marquee:hover .company-gallery-track,
+.company-gallery-marquee:focus-visible .company-gallery-track {
+  animation-play-state: paused;
+}
+
+.company-gallery-set {
+  display: flex;
+  gap: 14px;
+}
+
 .company-gallery-track img {
-  width: 100%;
+  width: clamp(280px, 24vw, 380px);
   aspect-ratio: 1.42;
+  flex: 0 0 auto;
   border-radius: var(--radius);
   object-fit: cover;
   object-position: center;
-  scroll-snap-align: start;
   box-shadow: 0 18px 45px rgba(19, 51, 101, 0.12);
+}
+
+@keyframes company-gallery-pan {
+  to {
+    transform: translate3d(calc(-50% - 7px), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-gallery-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 .credentials-section {
@@ -1598,11 +1599,6 @@ p {
     grid-column: auto;
   }
 
-  .brand-story-media {
-    width: 100%;
-    justify-self: start;
-  }
-
   .company-gallery {
     padding-right: 0;
     padding-left: 0;
@@ -1616,11 +1612,13 @@ p {
     aspect-ratio: 1.2;
   }
 
-  .company-gallery-track {
+  .company-gallery-marquee {
     width: 100%;
-    grid-auto-columns: minmax(240px, 78vw);
     padding: 12px clamp(20px, 6vw, 86px) 6px;
-    scroll-padding-inline: clamp(20px, 6vw, 86px);
+  }
+
+  .company-gallery-track img {
+    width: clamp(240px, 78vw, 360px);
   }
 }
 
