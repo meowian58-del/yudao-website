@@ -21,7 +21,7 @@ export const imageLedger = [
   },
   {
     file: '/assets/photos/og-ocean-freight.jpg',
-    source: 'Cropped Open Graph image from Unsplash Source photo-1649872136245-6070c1a71349',
+    source: 'User-provided branded Ocean Freight Open Graph image',
     usage: 'Ocean freight Open Graph and social preview image',
   },
   {

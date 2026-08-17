@@ -376,14 +376,15 @@ img {
 .key-figures-section,
 .solution-band,
 .quote-cta-band,
-.detail-layout,
-.why-band,
-.company-profile,
-.brand-story,
-.credentials-section,
-.mission-section,
-.policy-page,
-.not-found {
+  .detail-layout,
+  .why-band,
+  .company-profile,
+  .brand-story,
+  .company-gallery,
+  .credentials-section,
+  .mission-section,
+  .policy-page,
+  .not-found {
   padding: 4rem clamp(20px, 6vw, 86px);
 }
 
@@ -1071,6 +1072,56 @@ p {
   font-size: 14px;
 }
 
+.company-gallery {
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--soft) 0%, white 100%);
+}
+
+.company-gallery-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.company-gallery-hero img {
+  width: 100%;
+  aspect-ratio: 1.78;
+  max-height: 680px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 24px 70px rgba(19, 51, 101, 0.14);
+}
+
+.company-gallery-track {
+  display: grid;
+  grid-auto-columns: minmax(280px, 380px);
+  grid-auto-flow: column;
+  gap: 14px;
+  width: min(1180px, 100%);
+  padding: 14px 0 6px;
+  margin: 0 auto;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 0;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: rgba(187, 128, 17, 0.7) rgba(19, 51, 101, 0.08);
+}
+
+.company-gallery-track:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 6px;
+}
+
+.company-gallery-track img {
+  width: 100%;
+  aspect-ratio: 1.42;
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: center;
+  scroll-snap-align: start;
+  box-shadow: 0 18px 45px rgba(19, 51, 101, 0.12);
+}
+
 .credentials-section {
   background: linear-gradient(135deg, rgba(19, 51, 101, 0.06), rgba(187, 128, 17, 0.08));
 }
@@ -1317,6 +1368,7 @@ p {
     .why-band,
     .company-profile,
     .brand-story,
+    .company-gallery,
     .credentials-section,
     .mission-section,
     .policy-page,
@@ -1549,6 +1601,26 @@ p {
   .brand-story-media {
     width: 100%;
     justify-self: start;
+  }
+
+  .company-gallery {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .company-gallery-hero {
+    padding: 0 clamp(20px, 6vw, 86px);
+  }
+
+  .company-gallery-hero img {
+    aspect-ratio: 1.2;
+  }
+
+  .company-gallery-track {
+    width: 100%;
+    grid-auto-columns: minmax(240px, 78vw);
+    padding: 12px clamp(20px, 6vw, 86px) 6px;
+    scroll-padding-inline: clamp(20px, 6vw, 86px);
   }
 }
 

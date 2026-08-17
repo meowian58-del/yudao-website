@@ -38,6 +38,18 @@ import { photos } from '../data/images'
         <img :src="photos.yudaoStaffs" alt="Yudao team walking together near the coast" loading="lazy" />
       </div>
     </section>
+    <section class="company-gallery" aria-label="Yudao team photo gallery">
+      <div class="company-gallery-hero">
+        <img :src="photos.aboutTeamCover" alt="Yudao team group photo outside the Shenzhen office" loading="lazy" />
+      </div>
+      <div class="company-gallery-track" tabindex="0" aria-label="Scrollable Yudao team moments">
+        <img :src="photos.yudaoStaffs" alt="Yudao colleagues walking together near the coast" loading="lazy" />
+        <img :src="photos.yudaoStaffWork" alt="Yudao team members in the office" loading="lazy" />
+        <img :src="photos.yudaoStaffBeach" alt="Yudao team smiling together by the waterfront" loading="lazy" />
+        <img :src="photos.yudaoTeamBrandStory" alt="Yudao team brand story group moment" loading="lazy" />
+        <img :src="photos.yudaoOffice" alt="Yudao office meeting and operations workspace" loading="lazy" />
+      </div>
+    </section>
     <section class="advantage-grid company-points">
       <article><span>2023</span><h3>Founded in Shenzhen</h3><p>Shenzhen Yudao Global Logistics Limited was founded in 2023 to support structured international freight coordination.</p></article>
       <article><span>01</span><h3>Freight mode coverage</h3><p>Ocean, air, rail, road and multimodal transport coordination.</p></article>

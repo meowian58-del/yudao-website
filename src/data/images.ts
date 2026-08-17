@@ -12,6 +12,8 @@ export const photos = {
   logo: '/assets/brand/logo-yudao.png',
   logoWhite: '/assets/brand/logo-yudao-white.png',
   favicon: '/assets/brand/yudao-favicon.png',
+  aboutTeamCover: '/assets/photos/about-team-cover.png',
+  yudaoTeamBrandStory: '/assets/photos/yudao-team-brand-story.png',
   yudaoOffice: '/assets/photos/yudao-office.png',
   yudaoStaffs: '/assets/photos/yudao-staffs.png',
   yudaoStaffWork: '/assets/photos/yudao-staff-3.png',
