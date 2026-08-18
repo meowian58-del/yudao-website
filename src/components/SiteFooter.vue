@@ -25,7 +25,7 @@ import { site } from '../data/site'
       </div>
       <div>
         <h3>Company</h3>
-        <RouterLink to="/company">Company</RouterLink>
+        <RouterLink to="/company">About Us</RouterLink>
         <RouterLink to="/blog">Blog</RouterLink>
       </div>
     </div>
