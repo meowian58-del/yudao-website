@@ -927,20 +927,36 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 0;
 }
 
 .footer-grid h3 {
-  margin: 0 0 4px;
+  margin: 0 0 1rem;
   color: white;
-  font-size: 15px;
+  font-family: Manrope, Montserrat, "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 900;
+  line-height: 1.15;
 }
 
 .footer-grid a,
 .footer-grid span {
   display: flex;
-  min-height: 44px;
+  min-height: 2rem;
   align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.footer-grid a {
+  padding: 0.25rem 0;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.footer-grid a:hover {
+  color: white;
+  transform: translateX(2px);
 }
 
 .footer-bottom a {
@@ -952,7 +968,18 @@ p {
 .footer-brand p {
   margin: 0;
   color: white;
+  font-family: Manrope, Montserrat, "Segoe UI", sans-serif;
   font-weight: 900;
+  line-height: 1.25;
+}
+
+.footer-brand {
+  gap: 0.875rem;
+}
+
+.footer-brand .brand {
+  min-height: 0;
+  margin-bottom: 0.25rem;
 }
 
 .footer-bottom {
@@ -1379,9 +1406,12 @@ p {
   }
 
   .footer-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    width: min(100%, 1280px);
+    grid-template-columns: minmax(260px, 1.1fr) minmax(150px, 0.48fr) minmax(260px, 0.62fr) minmax(120px, 0.34fr);
+    gap: clamp(32px, 5vw, 76px);
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
   }
 
   .inner-hero {
